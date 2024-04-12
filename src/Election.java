@@ -44,17 +44,17 @@ public class Election {
 
         if (candidateVotes.containsKey(candidate)) { //if person exists
 
-            remainingVotes -= 1; //able to overtake the highest one
+            remainingVotes -= 2; //able to overtake the highest one
 
             candidateVotes.put(candidate, remainingVotes);
             // Iterate over all candidates
             for (String c : candidateVotes.keySet()) {
                 // Exclude the specified candidate
-                if (!c.equals(candidate) && remainingVotes < 0) {
+                if (!c.equals(candidate) && remainingVotes > 0) {
                     // Assign 1 vote to each candidate (except the specified candidate)
                     candidateVotes.put(c, 1);
                     // Decrement remaining votes by 1 for each candidate (except the specified candidate)
-                    remainingVotes -= 1;
+                    remainingVotes -= 2;
                 }
             }
             // Update the max heap to reflect the changes in the number of votes

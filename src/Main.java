@@ -20,14 +20,14 @@ public class Main {
         system.castVote("Anya Stroud");
         system.castVote("Anya Stroud");
 
-        System.out.println(system.getTopKCandidates(3));
+//        System.out.println(system.getTopKCandidates(3));
 
 
         system.rigElection("Marcus Fenix");
 
-        System.out.println(system.getTopKCandidates(3));
+//        System.out.println(system.getTopKCandidates(3));
 
-//        system.auditElection();
+        system.auditElection();
 
 //        System.out.println("Hello world!");
     }
