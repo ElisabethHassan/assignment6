@@ -11,6 +11,10 @@ public class ElectionSystem {
         rand = new Random();
     }
 
+    //TC --> O(N * LOG N) where n is the number of electorate votes that's randomly generated
+        //for loop is O(N) and body is O(N * LOG N) --> castRandomVote
+    //SC --> O(N) where n is the number of candidates randomly generated
+
     public void initializeRandomElection() {
         int numCandidates = rand.nextInt(5) + 2; // random num of candidates between 2 and 6
         LinkedList<String> candidates = generateRandomCandidates(numCandidates);
@@ -23,6 +27,9 @@ public class ElectionSystem {
         }
     }
 
+    //TC --> O(N) where n is the number of candidates randomly generated
+    //       iterating through for loop = O(n) and adding is O(1)
+    //SC --> O(N) where n is the number of candidates randomly generated
     private LinkedList<String> generateRandomCandidates(int numCandidates) {
         LinkedList<String> candidates = new LinkedList<>();
         for (int i = 0; i < numCandidates; i++) {
